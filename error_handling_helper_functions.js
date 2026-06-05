@@ -1,10 +1,10 @@
 function validateInput(input) {
     if (input === null || input === undefined || input === "") {
-        throw new Error("Your Input cannot be empty");
+        throw new Error("Your input cannot be empty");
     }
 
     if (isNaN(input)) {
-        throw new Error("Your Input must be a number");
+        throw new Error("Your input must be a number");
     }
 
     return Number(input);
@@ -28,7 +28,7 @@ function demonstrateErrors(input) {
         console.log(`${error.name}: ${error.message}`);
 
     } finally {
-        console.log("Processed finished :", input);
+        console.log("Processed has been completed :", input);
     }
 }
 
