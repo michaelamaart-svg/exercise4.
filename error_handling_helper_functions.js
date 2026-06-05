@@ -1,7 +1,6 @@
 function validateInput(input) {
-
     if (input === null || input === undefined || input === "") {
-        throw new Error("Input cannot be empty");
+        throw new Error("Your Input cannot be empty");
     }
 
     if (isNaN(input)) {
@@ -11,25 +10,25 @@ function validateInput(input) {
     return Number(input);
 }
 
-function demonstrateErrors(value) {
+function demonstrateErrors(input) {
     try {
-        const num = validateInput(value);
+        const number = validateInput(input);
 
-        if (num < 0) {
+        if (number < 0) {
             throw new RangeError("The number cannot be negative");
         }
 
-        if (num === 0) {
+        if (number === 0) {
             throw new Error("The number cannot be zero");
         }
 
-        console.log("Valid number:", num);
+        console.log("Valid number:", number);
 
     } catch (error) {
         console.log(`${error.name}: ${error.message}`);
 
     } finally {
-        console.log("Finished processing input:", value);
+        console.log("Processed finished :", input);
     }
 }
 
@@ -39,7 +38,7 @@ const StringUtils = {
     },
 
     capitalize(str) {
-        return str.charAt(0).toUpperCase() + str.slice(1);
+        return str[0].toUpperCase() + str.slice(1);
     },
 
     isEmpty(str) {
@@ -48,16 +47,16 @@ const StringUtils = {
 };
 
 const ArrayUtils = {
-    findMax(arr) {
-        return Math.max(...arr);
+    findMax(numbers) {
+        return Math.max(...numbers);
     },
 
-    sum(arr) {
-        return arr.reduce((total, num) => total + num, 0);
+    sum(numbers) {
+        return numbers.reduce((total, number) => total + number, 0);
     },
 
-    contains(arr, value) {
-        return arr.includes(value);
+    contains(numbers, value) {
+        return numbers.includes(value);
     }
 };
 
